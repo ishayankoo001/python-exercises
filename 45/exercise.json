@@ -1,0 +1,10 @@
+{
+    "id": 45,
+    "description": "Taken an input two strings, returns the list of substrings common to both strings",
+    "text": "\n    - takes as an input two character strings word1 and word2, and\n\n    - returns the list of substrings are in common to both strings.\n\n    The list of common substrings must be ordered in alphabetical\n    order and must not contain duplicates.\n\n    Remember that a substring is what you get from a string deleting 0\n    or more characters at the beginning and 0 or more characters at\n    the end.\n\n    For example:\n    - if word1='aabbccdd' and word2='acccdzza'\n    the function returns the list ['a', 'c', 'cc', 'ccd', 'cd', 'd']\n\n",
+    "algorithm": "Initialize two sets for the sub-strings \n for i=0 to the length of the first string: \n\t for j= i to the length of the first string: \n\t add to the first set the sub-string [i:j+1] of the first string\n do the same for the second string\n return a list obtained sorting the intersection of the first set of sub-strings with the second one",
+    "tags": ["Strings", "Sets", "Sorting"],
+    "effort": 6,
+    "clues": [],
+    "from": "recovery-19-6-18"
+}

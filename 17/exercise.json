@@ -1,0 +1,10 @@
+{
+    "id": 17,
+    "description": "Given a list of words and an integer k, delete words that contain at least k equal characters from the list, return the number of deleted words from the list",
+    "text": "\n    Design  function es17(ls,k) that receives as input\n    - a list ls of words\n    - an integer k\n\n    and deletes from ls all the words that contain at least k equal\n    characters. No distinction has to be made between uppercase and\n    lowercase. The function also returns the number of deleted words.\n    \n    For example,\n    - if ls=[ 'ananas', 'pera', 'banana', 'melone', 'kiwi','albicocca']\n    - and k=3\n    the function returns 3 and the list becomes ['pera', 'melone', 'kiwi']\n\n    - if ls=[ 'Angelo', 'Andrea', 'Osvaldo', 'Anna', 'Monica', 'Adele'] and k=2\n    the function returns 4 and the list becomes ['Angelo', 'Monica']\n\n",
+    "algorithm": "I initialize an empty list and a counter at 0\nfor each word in the list\n\tI reduce the word in lowercase\n\tI initialize a dictionary\n\tfor each letter of the word\n\t\tI insert in the dictionary the number of times it appears in the word\n\tif there is in the dictionary a letter with value >= to k\n\t\tI insert the index of the word in the list\n\t\tincrease the counter\nfor each index in the list\n\tdelete the word from the input list\nreturn the counter",
+    "tags": ["Lists", "Strings"],
+    "effort": 6,
+    "clues": [],
+    "from": "recupero-7-11-18"
+}

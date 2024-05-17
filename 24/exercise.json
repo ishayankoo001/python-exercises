@@ -1,0 +1,10 @@
+{
+    "id": 24,
+    "description": "Given a file and a list of characters, returns a list of tuples, each tuple consisting of a character in the input list and the percentage of occurrences of the character in the file.",
+    "text": "Design a function ex24(filename, char_list) such that:\n    - it takes as argument the name of a file 'filename' and a list of\n    characters 'char_list'\n    - it returns a ordered list of tuples (character, string).\n    For each character in the character list, the function computes\n    the percentage of occurrences in the content of the file, ignoring\n    the distinction between uppercase and lowercase.\n    The first element of each tuple is a character of the list, while\n    the second element is a string representing the percentage\n    w.r.t. the total number of alphabetic characters (those for which\n    the method isalpha() returns True) contained in 'filename'. The\n    string should have the percentage rounded to the second decimal\n    place and should end with the '%' character.\n    The returned list of tuples is ordered in descending order of\n    percentage, and in case of tie, in alphabetical order.\n\n    Example: if 'filename' contains the sequence of characters\n    'sono proprio cOntentO', and char_list=['o','i', 'S'], the\n    function returns the list\n    [('o', '31.58%'), ('S', '5.26%'), ('i', '5.26%')]\n",
+    "algorithm": "Read the text file \n turns the text into lowercase \n initializes a dictionary and a counter \n for each character \n\t if it is alphabetical \n\t\t increases the counter for each character in the list \n\t enter the character in the dictionary with value the occurrence number it has in the text \n for each character \n\t calculates the percentage \n\t rounds the percentage to 2 decimal digits \n returns the list ordered with tuples (character, percentage)",
+    "tags": ["Files", "Strings", "Lists", "Sorting"],
+    "effort": 6,
+    "clues": [],
+    "from": "recupero-12-7-18"
+}

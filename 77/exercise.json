@@ -1,0 +1,10 @@
+{
+    "id": 77,
+    "description": "Given a character string, without using recursion, the function returns the suffix list of the string.",
+    "text": "\n    \n   Define a NOT recursive function, NOT using any recursive functions, es77(word),\n    which takes a string of characters as input. The function returns the list of\n    all the suffixes of the string.\n    The elements of the list must be sorted by increasing length.\n\n    Remember that a suffix of a word is what you get by deleting 0 or more \n    initial characters from the word.\n    Example: es77(\"fondamenti\") should return\n    ['i', 'ti', 'ti', 'nti', 'enti', 'enti', 'menti', 'amenti', 'damenti', 'ndamenti', 'ondamenti', 'fondamenti']",
+    "algorithm": "es77(word):\normalizes an empty list\n\tfor i that goes from the end of the word to 0: \n\t\tadd to the list the characters of word from i to the end of the word \n\treturn the list",
+    "tags": ["Strings"],
+    "effort": 3,
+    "clues": [],
+    "from": "esame-18-4-18"
+}

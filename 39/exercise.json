@@ -1,0 +1,10 @@
+{
+    "id": 39,
+    "description": "Given an integer n and a path to a json file, you build a spiral matrix of order n and save it in the json file, return the sum of the values in the even index columns",
+    "text": "Given an integer n, a spiral matrix of order n is a matrix of\n    dimensions n x n which shows the numbers from 1 to n**2, following\n    a clockwise spiral.  For example the spiral matrix of order 4 is\n    \n     1 2 3 4 \n    12 13 14 5\n    11 16 15 6\n    10 9 8 7 \n    \n    Design a function ex39(n, jsonFile) such that\n    - it takes as argument an int 'n' and the path of a json file 'jsonFile'\n    - it writes in json format in the file 'jsonFile' the list of\n      lists representing the spiral matrix of order n\n    - it returns the sum of the values in the columns with the even\n      indexes of the matrix.\n\n    Example: for n=4 the jsonFile will contain\n     [[1, 2, 3, 4],[12, 13, 14, 5],[11, 16, 15, 6], [10, 9, 8, 7]]\n     and the value returned will be 74.",
+    "algorithm": "I build an empty matrix containing only 0 \n initialize x and y to 0 \n initialize a tuple with the 4 directions that you can take e.g. [0, 1] to increase the y \n set dir to 0 \n for each integer number from 0 to n**2: \n\t I insert the integer in the position (x, y) \n\t increment x and y, checking that they remain inside the matrix and that the new position contains a 0 \n initialize a variable sum \n\t for each column of even index: \n\t\t for each row: \n\t\t\t sum the values of the column \n store the matrix in the json \n return the sum",
+    "tags": ["Matrices", "Json"],
+    "effort": 5,
+    "clues": [],
+    "from": "recuper-16-3-18"
+}

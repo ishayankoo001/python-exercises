@@ -1,0 +1,10 @@
+{
+    "id": 80,
+    "description": "Given a path to a directory and a set of words ( character strings between 'a' and 'z'), the search function in the directory and its subdirectories for any .txt files with words contained in the set passed in input, returns a dictionary of found words.",
+    "text": "WARNING: use as file separator the character '/' that works in both\n                Windows and Linux or the os.path.join function\n       WARNING: it is forbidden to use the os.walk function.\n\n    Design a function es80(dir1, words) such that it receives as arguments:\n      - dir1: the path of a directory\n      - words: a set of words (strings of character between 'a' and 'z')\n    and does the following:\n      - it searchs in the dir1 directory and in its subdirectories\n        files with extension .txt containing strings belonging to the\n        'words' set\n      - it returns a dictionary with the found words.\n    In the returned dictionary, the keys are the found words and the\n    related values are tuples of two integers.\n    The first element of the tuple is the total number of times the\n    word has been found in any .txt file.  The second element of the\n    tuple is the maximum depth of the files in which the word can be\n    found. The depth of the files in the directory dir1 is 0.\n    Remember that a word is a maximal sequence characters between 'a'\n    and 'z'.  Assume that all .txt files in dir1 contain only words\n    separated by spaces, tabs or new lines (\n) and that there are no\n    uppercase characters or punctuation marks.\n",
+    "algorithm": "",
+    "tags": ["File Search", "Files"],
+    "effort": 6,
+    "clues": [],
+    "from": "esame-18-4-18"
+}

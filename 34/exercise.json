@@ -1,0 +1,10 @@
+{
+    "id": 34,
+    "description": "Given two paths to json files, the first file contains an incomplete Latin square in the form of a list of lists, complete the Latin square and save it in the second json file, return the set of symbols that appear in the square",
+    "text": "A Latin square is an n × n array filled with n different symbols,\n    each occurring exactly once in each row and exactly once in each\n    column.\n\n    Design a function ex34(fname1,fname2) such that:\n    - it takes as argument two filenames ('fname1' and\n      'fname2'). 'fname1' is a json file in which is stored a Latin\n      square, where the last row and the last column are missing. The\n      Latin square is represented as a list of lists\n    - it saves in 'fname2' the Latin square completed with the missing\n      column and row. The Latin square is saved as a list of lists in\n      json format\n    - it returns a set containing all the symbols that appear in the\n      completed Latin square.\n\n    Example: if the partial Latin square in fname1 is represented as\n    the list of lists [['X','1'],['?','X']], then,\n    the set with the symbols of the Latin square will be {'X','1','?'}\n    and the complete Latin square will be saved in fname2 as\n    [['X','1','?'],['?','X','1'],['1','?','X']]\n\n    Note: assume that it is always n>2",
+    "algorithm": "Initialize an empty list \n save the square in file 1 in the list \n get the set of symbols of the square \n save the number of symbols of the set \n for each line of the square: \n\t add the missing symbol at the bottom \n initialize an empty list for the last row \n for each column \n\t add the missing symbol at the bottom of the column \n add the row to the square \n save the square in the second file \n return the set of symbols",
+    "tags": ["Matrices", "Files", "Json"],
+    "effort": 6,
+    "clues": [],
+    "from": "recupero-15-2-18"
+}

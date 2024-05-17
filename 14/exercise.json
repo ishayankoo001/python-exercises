@@ -1,0 +1,10 @@
+{
+    "id": 14,
+    "description": "Given a binary tree and an integer x as inputs, returns the number of tree nodes divisible by x + level",
+    "text": "\n    Design  and implement a recursive function es14(tree,x) (or a\n      function that makes use of recursive function(s) or methods(s))\n      that takes as arguments:\n      - 'tree', a binary tree formed by nodes of type BinTree defined\n          in the  library bintree.py\n      - an integer 'x'\n      and calculates the number of nodes in the tree that have value\n      divisible by x+level, where level is the level of the node. The\n      function returns as a result the calculated number.\n      WARNING:  it is FORBIDDEN to use methods of the library bintree\n\n      Example: if x = 2 and the tree is:\n\n              7\n              /\\n            1  3\n            / \\n          4    6\n        /    /\n        5    2\n      /     \\n      9       8\n      \n      the function returns the value 3, since in the tree there are 3\n      nodes with value divisible by 2+level, namely the nodes with\n      value 3,4 and 5.\n  ",
+    "algorithm": "I add to the arguments of the function a new variable count=0\n\nif there is a right child\n\tI call the function with x increased by 1 on the right child, and save the result in count\nif there is a left child\n\tI call the function on the left child with x increased by 1, save the result in count\nif node value module x is 0\n\tincrease count by 1\nreturn count",
+    "tags": ["Recursion", "Trees"],
+    "effort": 6,
+    "clues": [],
+    "from": "recupero-7-11-18"
+}

@@ -1,0 +1,10 @@
+{
+    "id": 60,
+    "description": "Dati in input due file, la funzione modifica la matrice contenuta nel primo file e la salva nel secondo, torna un intero.",
+    "text": "\nDesign and implement the function ex60(textfile, textfile2) such that:\n    - it receives as arguments two filenames ('textfile' and\n      'textfile2') of text files\n    - it reads the content of 'textfile', that consists of the rows of\n      a matrix made of integers between 1 and 9, separated by whitespaces\n    - it modifies the matrix and writes the resulting matrix in 'textfile2'\n    - it returns the number of columns of the matrix that were modified.\n    The matrix is modified so that all the values of odd columns are\n    replaced with a zero.  A column in the matrix is called 'odd' if\n    most of its elements are odd (that is, if the number of odd\n    elements is equal or lower than the number of even elements, the\n    row is not odd).\n\n    Example: if the file in textfile contains the following rows\n    1 2 3 4 5 7\n    3 4 4 4 4 5\n    3 1 4 6 3 1\n    2 5 8 1 7 3\n    the function will return the value 3 and textfile2 will contain\n    the following rows\n    0 2 3 4 0 0\n    0 4 4 4 0 0\n    0 1 4 6 0 0\n    0 5 8 1 0 0\n",
+    "algorithm": "Initialize an empty array \n open the first file \n\t for each row of the file \n\t\t add the row, as a list of integers, to the array \n save in w and h the size of the matrix \n initialize a counter for odd columns \n for c ranging from 0 to w: \n\t initializes the counter for the odd numbers of the row to 0\n\t for r which goes from 0 to h: \n\t\t updates the counter for odd numbers \n\t if the counter for odd numbers is greater than the even numbers: \n\t\t increase the counter of odd columns \n\t\t for r from 0 to h: \n\t\t\t set to 0 the elements of the column (mtr[r][c] = 0) \n save the matrix in the second file \n return the counter for the odd columns",
+    "tags": ["Files", "Matrices"],
+    "effort": 6,
+    "clues": [],
+    "from": "recupero-23-1-18"
+}

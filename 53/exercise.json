@@ -1,0 +1,10 @@
+{
+    "id": 53,
+    "description": "Given a file as input, returns a dictionary with integer as keys and integer list as attributes.",
+    "text": "\n    Design the function es53(ftext) that,\n    - receives as an input the path of a text file and\n    - returns a dictionary in which the keys are integer and the\n      values are integer lists.\n    The dictionary to be returned has to be read from the text file in\n    input. The dictionary is stored as a sequence of integers separated\n    by an  arbitrary number of spaces (' '), new line characters ('\n')\n    and colons (':').\n    Dictionary keys are always followed by ':' and then by the related\n    list of elements.\n    As an example:\n    if the file contains the text\n    '' \n    3 : 3 6 9\n    2: 4 6 10\n    ''\n    the function will return the dictionary { 3: [3,6,9], 2: [4,6,10]}\n    if the file contains \n    ''     4: 5 6: 7        8 \n    9 10 11:12 13:14 \n    15'' \n    the function will return the dictionary {4:[5], 6:[7,8,9,10], 11:[12], 13:[14,15]}\n",
+    "algorithm": "Open the file and save the text in a text variable\ndivide the text into an lst list, using ':' as a divider\nfor each element lst:\n\ttransforms the string into a list of integers\ninitialize a new list1\nfor i which goes from 1 to the length of lst -1\n\tinsert in list1 the lst[i-1] element in last position + the lst[i] elements minus the last element, the new list1 element will be a list of integers of type [1,2,3,4] corresponding to the dictionary element {1:[2,3,4]}.\ninitialize a dictionary\nfor each list in list1:\n\tI insert in the dictionary a key-value pair like: element type[0]:[element[1:]\nreturn the dictionary",
+    "tags": ["File", "Dictionaries"],
+    "effort": 6,
+    "clues": [],
+    "from": "recupero-19-9-18"
+}

@@ -1,0 +1,10 @@
+{
+    "id": 6, 
+    "description": "It takes as input a set of strings, each one represents a leaf-root path in a binary tree, where each node contains a letter, returns the binary tree", 
+    "text": "Design a function ex6(string_set) such that:\n   - it is recursive or uses recursive function(s)/methods(s)\n   - it receives a set of strings 'string_set' as argument\n   - it exploits the strings in 'string_set' to reconstruct a binary\n     tree in which the values of the nodes are single characters\n   - it returns the reconstructed binary tree as a tree of nodes of\n     type BinaryTree, defined in the attached tree.py library.\n   Each string of 'string_set' represents a sequence of the values of\n   the nodes traversed following the path from a leaf to the root of a\n   binary tree. The tree is such that:\n   - the value of each node is one single character\n   - each internal node is locally ordered from left to right, namely:\n     - each left child has a value smaller than that of the father\n     - each right child has a value greater than that of the father\n\n   Example: if the tree to reconstruct is\n\n                     i     \n                     |\n             |-----------------|               \n             h                 m \n             |                 |   \n         |--------|        |------|   \n         c        j        k      p\n         |        |               |\n      |-----|  |-----|         |-----|\n      a     f  g     k         m     q    \n\n   The set of strings is:\n      { 'achi', 'qpmi', 'gjhi', 'fchi', 'mpmi', 'kmi', 'kjhi' }\n\n   WARNING: it's FORBIDDEN to use any method defined in the class tree.py", 
+    "algorithm": "", 
+    "tags": ["Trees", "Recursion", "Strings"], 
+    "effort": 7,
+    "clues": [],
+    "from":"esame-7-11-18"
+}

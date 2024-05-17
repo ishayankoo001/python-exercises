@@ -1,0 +1,10 @@
+{
+    "id": 33,
+    "description": "Given as input two paths to text files, takes the text in the first file, builds a histogram with the frequency of characters in the text and saves the histogram in the second file, returns the number of lines in the histogram",
+    "text": "\n    Design and implement the function es33(fname1,fname2) which takes\n    as input the path to a text file fname1 and builds a histogram\n    with the frequencies of some of the characters in the text\n    file. The function also saves the created histogram in the fname2\n    text file and returns the number of lines it is composed of.  The\n    histogram contains as many lines as the number of characters\n    between 'a' and 'z' found in the text of fname1.  If a certain\n    character x appears in the text y times, then in the histogram\n    there will be a row with a string composed of y repetitions of the\n    x character. The rows of the histogram must be ordered by\n    decreasing length of the characters that appear in the histogram\n    and in alphabetical order, in case of equal length.\n\n    For example if the file fname1 contains the text 'Monti, Sterbini\n    e Spognardi' then the value returned by the function will be 11\n    and the histogram will be\n\n    iiii\n    nnn\n    ee\n    oo\n    rr\n    tt\n    a\n    b\n    d\n    g\n    p\n\n",
+    "algorithm": "Read the text from the first file\ninitialize an empty list\nfor each character from 'a' to 'z':\n\tI count the times the character appears in the text\n\tif the number is > of 0:\n\t\tI add the string of the character repeated the number of times\nI order the list\nI write the histogram in file 2\nreturn the length of the list",
+    "tags": ["File", "Strings", "Sorting"],
+    "effort": 6,
+    "clues": [],
+    "from": "recupero-15-2-18"
+}

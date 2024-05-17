@@ -1,0 +1,10 @@
+{
+    "id": 47,
+    "description": "Given a list of strings as an input, return a sorted list without duplicates",
+    "text": "design the function es47(string_list) which:\n\n    - takes as an input a list of strings, and\n    - returns a list of strings.\n\n    The function returns a list obtained from the input list after\n    deleting duplicates, and in which the strings have been ordered by\n    increasing length and, in case of equal length, by descending\n    alphabetical order.\n\n    At the end of the function the list received as input MUST NOT be\n    modified.\n\n    For example:\n    - for string_list=[ 'uuu','ccc','a','aa','d','z','zzz','uuu','z','z','uuu']\n\n    the function has to  return the list\n    - ['z','d','a','aa','zzz','uuu','ccc']\n    while the input list will not be modified.\n",
+    "algorithm": "make a set from the list\ntransform the set in a list\norder the list accordingly",
+    "tags": ["Strings", "Sorting"],
+    "effort": 6,
+    "clues": [],
+    "from": "recupero-19-6-18"
+}

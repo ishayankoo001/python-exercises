@@ -1,0 +1,10 @@
+{
+    "id": 19,
+    "description": "Given a file with a 2-dimensional array inside, return a tuple of two values, the first: the 2-d array in the form of a list of lists, the second: the sum of the frame values",
+    "text": "\n   A 2-dimensional matrix of integers is registered within a text\n    file.  The file contains empty lines interspersed with lines\n    corresponding to the rows of the matrix.\n\n    Inside the lines corresponding to the matrix rows, each integer of\n    the matrix row appears preceded by one or more spaces.  See for\n    example the file fm10_1.txt where the following matrix is\n    registered:\n     1 20  3 40  5\n    60  7  8  9 10\n    11 12 13 14 15\n    Deisgn and implement a function es19(ftext) that,\n    - takes as argument the path to a text file in which the matrix of\n      integer is written\n    - returns a pair (tuple) containing:\n        - the matrix as a list of list of integer \n        - the sum of the elements of the outer frame of the matrix,\n          namely, the first and the last rows and the first and last\n          columns of the matrix.\n    For example for filefm10_1.txt the function must return:\n        ([[ 1, 20,  3, 40,  5],\n          [60,  7,  8,  9, 10],\n          [11, 12, 13, 14, 15]],\n          204)\n    ",
+    "algorithm": "I initialize the empty matrix and the frame to 0\nI open the file\nfor each row:\n\tif it's a row of the matrix:\n\t\tI add the numbers to a list\n\t\tI add the list to the matrix\nI close the file\ncalculate the value of the frame\nreturn the tuple (matrix, frame)",
+    "tags": ["File", "Strings", "Matrices"],
+    "effort": 6,
+    "clues": [],
+    "from": "recupero-7-11-18"
+}

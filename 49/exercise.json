@@ -1,0 +1,10 @@
+{
+    "id": 49,
+    "description": "It takes the address of three png files, creates an image from the images contained in the first two png files and saves it in the third address, returns the number of pixels so r+g+b is an odd number.",
+    "text": "Design and implement a function ex49(fimm1,fimm2,fimm3) such that\n    - it receives as arguments the addresses of three .PNG file names,\n      two to be read (fimm1 and fimm2) and one (fimm3) to be created\n    - it reads the two images and creates a third image to be saved in fimm3\n    - it returns the number of pixels of the created image for which\n      the sum of the three color coordinates is an odd number\n    The third image is obtained from the first two. It has minimum\n    width between the widths of fimm1 and fimm2 and the minimum height\n    between fimm1 and fimm2 heights.\n    For each i and j, if i and j are both even or odd numbers, then\n    the pixel [i][j] of the new image has the same color of the\n    corresponding pixel of the fimm1 image; otherwise, it has the same\n    color of the corresponding pixel of the fimm2 image.\n    For loading and saving PNG files, you can use the load and save\n    functions of the images library.\n",
+    "algorithm": "Load the two images in img1 and im2 \n take the size of the two images \n calculate the size of the image to create min(...) \n initialize the new image with all black pixels \n initialize the counter for odd pixels \n for each pixel of the image\n\t if the pixel coordinates are an even number: \n\t\t enter the pixel of the first image \n otherwise enter the pixel of the second image \n\t if the sum r+g+b is odd: \n\t\t increment the counter \n save the image \n return counter\n",
+    "tags": ["Images"],
+    "effort": 6,
+    "clues": [],
+    "from": "recupero-19-9-18"
+}
