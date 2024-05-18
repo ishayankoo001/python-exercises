@@ -25,17 +25,22 @@ def ex9(pathDir):
 
     '''
     # insert your code here
+    list = []
+    explorer(pathDir,list,())
+    list = [x for x in list if x != ()]
+    list = sorted(list, key = lambda x: [-x[1],x[0]])
+    print(list)
+    return list
+
+def explorer(pathDir, mylist, mytuple):
     sum = find_text_size(pathDir)
-    mylist = []
-    mytuple = ()
     mylist.append((os.path.basename(pathDir), sum))
     for f in os.listdir(pathDir):
         fn = os.path.join(pathDir, f)
         if os.path.isdir(fn):
-            mylist.append(ex9(fn))
-    print(mylist)
-    return mytuple
+            mylist.append(explorer(fn, mylist, mytuple))
 
+    return mytuple
 def find_text_size(path):
     sum = 0
     for f in os.listdir(path):
@@ -45,7 +50,7 @@ def find_text_size(path):
 
                 sum += os.path.getsize(fn)
     return sum
-print(ex9('Informatica/Software'))
+(ex9('Informatica/Software'))
 
 
 
