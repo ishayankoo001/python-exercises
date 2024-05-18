@@ -43,7 +43,6 @@ def ex6(string_set):
 
    WARNING: it's FORBIDDEN to use any method defined in the class tree.py
    '''
-   string_set = (sorted(string_set, key = lambda x:-len(x)))
    string_set = ["".join(reversed(x)) for x in string_set]
    tr = tree.BinaryTree(string_set[0][0])
    string_set = [x[1:] for x in string_set]
