@@ -17,7 +17,6 @@
     the list with all the possible words resulting from a fusion of
     two words of word_set. Any duplicate in the list is removed. The
     list is sorted in alphabetical order.
-  
     For example:
 
     - if word_set={'aaaa', 'acde', 'aacd', 'aaaade'}, the function
