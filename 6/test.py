@@ -34,8 +34,8 @@ class Test(testlib.TestCase):
              self.forbidden_function('os.walk'):
              #self.timer(2):
             result = program.ex6(percorsi)
-        tree = tree.BinaryTree.fromList(expected)
-        self.assertEqual(result, tree, "L'albero non è corretto./The returned tree is incorrect")
+        tre = tree.BinaryTree.fromList(expected)
+        self.assertEqual(result, tre, "L'albero non è corretto./The returned tree is incorrect")
 
     def test_1(self):
         percorsi = {'achi', 'qpmi', 'gjhi', 'fchi', 'mpmi', 'kmi', 'kjhi'}

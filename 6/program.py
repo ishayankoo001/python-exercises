@@ -1,6 +1,6 @@
 import tree
 
-def ex6():
+def ex6(string_set):
    '''Design a function ex6(string_set) such that:
    - it is recursive or uses recursive function(s)/methods(s)
 
@@ -43,9 +43,37 @@ def ex6():
 
    WARNING: it's FORBIDDEN to use any method defined in the class tree.py
    '''
-   # insert here your code
-   pass
+   string_set = (sorted(string_set, key = lambda x:-len(x)))
+   string_set = ["".join(reversed(x)) for x in string_set]
+   tr = tree.BinaryTree(string_set[0][0])
+   string_set = [x[1:] for x in string_set]
+   for i in string_set:
+      treeBuilder(tr,i)
+
+   return tr
+
+def treeBuilder(tr, string):
+   if string == "":
+      return tr
+   i = string[0]
+   if i<tr.value:
+      if(tr.left != None and tr.left.value==i):
+         return treeBuilder(tr.left, string[1:])
+      tr.left = tree.BinaryTree(i)
+      return treeBuilder(tr.left, string[1:])
+   if i>tr.value:
+      if(tr.right != None and tr.right.value==i):
+         return treeBuilder(tr.right, string[1:])
+
+      tr.right = tree.BinaryTree(i)
+      return treeBuilder(tr.right, string[1:])
 
 
 
+a = ex6({ 'achi', 'qpmi', 'gjhi', 'fchi', 'mpmi', 'kmi', 'kjhi' })
+e = ['i',    ['h',   ['c',   ['a', None, None], ['f', None, None]], ['j',   ['g', None, None], [
+            'k', None, None]]], ['m',   ['k',   None, None], ['p',   ['m', None, None], ['q', None, None]]]]
+print(a)
 
+l = tree.BinaryTree.toList(a)
+print(l==e)
