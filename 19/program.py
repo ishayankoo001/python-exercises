@@ -24,4 +24,21 @@ def es19(ftext):
           [11, 12, 13, 14, 15]],
           204)
     '''
-    pass
+    with open(ftext) as f:
+        lis = ([[int(x) for x in line.strip().split(" ") if x != ""] for line in f if line.strip() != ""])
+    s = 0
+    maxh = len(lis)
+    maxw = len(lis[0])
+    acch = [0,maxh-1]
+    accw = [0, maxw -1]
+    for h in range(maxh):
+        for w in range(maxw):
+            if h in acch or w in accw:
+                s += lis[h][w]
+
+
+
+
+    return tuple([lis,s])
+
+print(es19("fm10_2.txt"))
