@@ -41,20 +41,4 @@ def ex13(fimm,fimm1):
 
     '''
     # insert your code here
-    img = images.load("Foto2.png")
-    img = sorted(img)
-    count = 0
-    pixels = []
-    for i, row in enumerate(img):
-        for j, pixel in enumerate(row):
-            if count % 50 == 0:
-                newColor = pixel
-            img[i][j] = newColor
-            count += 1
-            if pixel not in pixels:
-                pixels.append(pixel)
-    images.save(img, "test.png")
-    return len(pixels)
-
-print(ex13(3,3))
 
