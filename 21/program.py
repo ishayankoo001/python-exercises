@@ -16,17 +16,18 @@ def es21(matrix):
       ['q','s','n','z']]
 
     '''
-    cols = []
-    newmatrix = []
-    for i in range(len(matrix[0])):
-        for j in matrix:
-            cols.append(j[i])
-    cols = [sorted(cols[x:x+len(matrix)]) for x in range(0,len(cols),len(matrix))]
-    for i in range(len(cols[0])):
-        for j in cols:
-            newmatrix.append(j[i])
-    print(newmatrix)
-    newmatrix = [newmatrix[x:x+len(matrix[0])] for x in range(0,len(newmatrix), len(matrix[0]))]
+    newmat = list((zip(*matrix)))
+    print(newmat)
+    newnewmat = []
+    for i in newmat:
+        newnewmat .append(list(sorted(i, key=lambda x:x)))
+    newnewmat = list(zip(*newnewmat))
+    newnewmat = [[*x] for x in newnewmat]
 
-    return newmatrix
+
+    return newnewmat
+matrix = [['q','s','g','g'],
+      ['b','a','m','f'],
+      ['a','b','n','z']]
+print(es21(matrix))
 
