@@ -18,4 +18,32 @@ def es17(ls, k):
     the function returns 4 and the list becomes ['Angelo', 'Monica']
 
     '''
-    pass
+    newls = []
+    for word in ls:
+        if(shouldAdd(buildDictionary(word.lower()),k)):
+            newls.append(word)
+    num = len(ls) - len(newls)
+    ls[:] = newls[:]
+    print(ls)
+    return num
+
+
+def buildDictionary(word):
+    mydict = {}
+    for letter in word:
+        if letter in mydict:
+            mydict[letter] += 1
+        else:
+            mydict[letter] = 1
+    print(mydict)
+    return mydict
+def shouldAdd(dictionary: dict, k):
+    for item in dictionary.items():
+        print(item)
+        if item[1] >= k:
+            return False
+    return True
+print(es17(['Angelo', 'Andrea', 'Osvaldo', 'Anna',
+          'Monica', 'Adele'],2))
+
+

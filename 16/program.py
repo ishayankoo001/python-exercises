@@ -26,4 +26,18 @@ def es16(s, k):
       ['aabbdd', 'ccaabb', 'aabbd', 'abbdd', 'caabb', 'ccaab', 'abbd', 'caab']
 
     '''
-    pass
+    dict = {}
+    for char in s:
+        if char in dict:
+            dict[char] += 1
+        else:
+            dict[char] = 1
+    print(dict)
+def chooseK(dict : dict, k, list):
+    l =
+    for i in dict.keys():
+
+
+
+es16("ccaabbdd", 3)
+
