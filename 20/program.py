@@ -1,3 +1,9 @@
+
+def wordtonum(word, dic):
+    sum = 0
+    for letter in word:
+        sum += dic[letter]
+    return str(sum)
 def es20(string1):
     '''Consider the alphabetical order of the 21 letters of the Italian alphabet:
     A – B – C – D – E – F – G – H – I – L – M – N – O – P – Q – R – S – T – U – V – Z
@@ -19,6 +25,20 @@ def es20(string1):
     For example,
     - if string1='Angelo Monti Andrea Sterbini e Angelo Spognardi'
     - the function returns the string '48 63 39 88 5 48 93'
-
     '''
-    pass
+    lis = "A – B – C – D – E – F – G – H – I – L – M – N – O – P – Q – R – S – T – U – V – Z"
+    lis = [x.strip() for x in lis.split("–")]
+    list2 = [x for x in range(1,22)]
+    dict = {k:v for k,v in zip(lis,list2)}
+    string1 = string1.split(" ")
+    string1 = [x.upper() for x in string1]
+    rt = []
+    for s in string1:
+        rt.append(wordtonum(s,dict))
+
+
+    return " ".join(rt)
+print(es20("andrea"))
+
+
+
