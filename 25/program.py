@@ -18,12 +18,10 @@ def es25(n):
 
     '''
     a = n
-    b = 0
     list = []
     while(a>=0):
         list.append((choose(a,n)))
         a -= 1
-        b += 1
     return list
 def factorial(n):
     if n == 0:
