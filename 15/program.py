@@ -1,7 +1,7 @@
-
-
 import images
-def ex15(fimm1,fimm2,fimm3):
+
+
+def ex15(fimm1, fimm2, fimm3):
     '''Design a function ex15(fimm1,fimm2,fimm3) such that:
     - it receives as arguments three filenames of .PNG files. The
       files 'fimm1' and 'fimm2' store two images WITH DIFFERENT
@@ -24,30 +24,27 @@ def ex15(fimm1,fimm2,fimm3):
     '''
     fimm1 = images.load(fimm1)
     fimm2 = images.load(fimm2)
-    fimm1_height, fimm1_width = (len(fimm1),len(fimm1[0]))
+    fimm1_height, fimm1_width = (len(fimm1), len(fimm1[0]))
     fimm2_height, fimm2_width = (len(fimm2), len(fimm2[0]))
-    imm3_height, imm3_width = (max(fimm1_height,fimm2_height),max(fimm2_width,fimm1_width))
+    imm3_height, imm3_width = (max(fimm1_height, fimm2_height), max(fimm2_width, fimm1_width))
     minw, minh = (min(fimm1_width, fimm2_width), min(fimm1_height, fimm2_height))
     height_source = fimm1 if fimm1_height == imm3_height else fimm2
     width_source = fimm1 if fimm1_width == imm3_width else fimm2
-    imm3 = [[(0,0,0) for x in range(imm3_width)] for x in range(imm3_height)]
+    imm3 = [[(0, 0, 0) for x in range(imm3_width)] for x in range(imm3_height)]
     for h in range(minh, imm3_height):
         for w in range(len(height_source[0])):
-            print(h,w)
+            print(h, w)
             imm3[h][w] = height_source[h][w]
     for h in range(len(width_source)):
         for w in range(minw, imm3_width):
             imm3[h][w] = width_source[h][w]
-    images.save(imm3,fimm3)
+    images.save(imm3, fimm3)
     count = 0
     for i in range(imm3_height):
         for j in range(imm3_width):
-            if imm3[i][j] == (0,0,0):
+            if imm3[i][j] == (0, 0, 0):
                 count += 1
     return count
 
 
-
-
-    
 ex15("foto1.png", "foto2.png", "testt.png")

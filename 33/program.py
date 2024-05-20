@@ -1,5 +1,4 @@
-
-def es33(fname1,fname2):
+def es33(fname1, fname2):
     '''Design and implement the function es33(fname1,fname2) which takes
     as input the path to a text file fname1 and builds a histogram
     with the frequencies of some of the characters in the text
@@ -42,28 +41,15 @@ def es33(fname1,fname2):
                 dict[i] += 1
             else:
                 dict[i] = 1
-        dict = sorted(dict.items(), key = lambda x:[-x[1],x[0]])
-    with open(fname2,"w") as f2:
+        dict = sorted(dict.items(), key=lambda x: [-x[1], x[0]])
+    with open(fname2, "w") as f2:
         h = 0
-
-        for i,v in dict:
-            f2.write(i*v)
-            h+=1
-            if h!= len(dict):
+        for i, v in dict:
+            f2.write(i * v)
+            h += 1
+            if h != len(dict):
                 f2.write("\n")
-
     return len(dict)
 
 
-
-
 es33("ftesto3.txt", "test.txt")
-
-
-
-
-
-
-
-
- 

@@ -1,4 +1,3 @@
-
 '''
     A common way to store tables is as lists of dictionaries.  Each
     row of the table corresponds to a dictionary whose keys are the
@@ -14,7 +13,9 @@ can be stored as
 [{'name': 'Sophie', 'year': 1973 ,'tel': 5553546},{'name': 'Bruno', 'year': 1981 ,'tel': 5558432}]
 
 '''
-def es29(table1,table2,col):
+
+
+def es29(table1, table2, col):
     '''Implement the function es29(table1, table2, col) that takes as an
     input
 
@@ -63,16 +64,11 @@ def es29(table1,table2,col):
     # insert here your code
     values_for_column = []
     sum = 0
-    for i in table1 :
+    for i in table1:
         values_for_column.append(i[col])
     for i in table2:
         if i[col] not in values_for_column:
             sum += 1
             table1.append(i)
-    table1[:] = (sorted(table1, key=lambda x:x[col]))
+    table1[:] = (sorted(table1, key=lambda x: x[col]))
     return sum
-
-
-
-
-    
