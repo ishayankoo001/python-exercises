@@ -35,4 +35,19 @@ def es27(table, column, value):
     and the table is modified in [{'name': 'Bruno','tel': 5558432}]
 
     '''
-    # insert here your code
+    tbl = [i for i in table if i[column]==value]
+    print(tbl)
+    deleted = len(table)
+    tble = []
+    for i in tbl:
+        tble.append({k:v for k,v in i.items() if k!= column})
+    print(tble)
+    table[:] = tble
+    print(table)
+    return deleted-len(tble)
+print(es27([{'name': 'Sophie', 'year': 1973 ,'tel': 5553546},
+                 {'name': 'Bruno', 'year': 1981 ,'tel': 5558432}],"year",1981))
+
+ls = [{'C1': 2, 'C2': 1, 'C3': 'd'}, {'C1': 4, 'C2': 7, 'C3': 'a'}, {'C1': 6, 'C2': 1, 'C3': 'b'}, {
+         'C1': 8, 'C2': 3, 'C3': 'c'}]
+print(es27(ls,'C2',1))
