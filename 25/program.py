@@ -17,4 +17,17 @@ def es25(n):
     Where a value is missing, you can use the value 0 (zero).
 
     '''
-    pass
+    a = n
+    b = 0
+    list = []
+    while(a>=0):
+        list.append((choose(a,n)))
+        a -= 1
+        b += 1
+    return list
+def factorial(n):
+    if n == 0:
+        return 1
+    return n*factorial(n-1)
+def choose(n, k):
+    return (int)(factorial(k)/(factorial(n)*factorial(k-n)))
