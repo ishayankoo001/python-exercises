@@ -29,8 +29,6 @@ def es33(fname1, fname2):
     p
 
     '''
-    alphas = []
-    # insert here your code
     with open(fname1) as f:
         whole = f.read()
         whole.strip()
@@ -51,5 +49,3 @@ def es33(fname1, fname2):
                 f2.write("\n")
     return len(dict)
 
-
-es33("ftesto3.txt", "test.txt")
