@@ -14,9 +14,6 @@ can be stored as
 '''
 
 def es28(table, col, val):
-    table2 = [{
-        c:v for c,v in table.items() if c!= col
-    } for a in table if a[col]==val]
     '''Implement the function es28(table, col, val) that takes as an
     input
 
@@ -37,4 +34,12 @@ def es28(table, col, val):
     [{'name': 'Bruno','tel': 5558432}]
 
     '''
-    # insert here your code
+    column = col
+    value = val
+    tbl = [i for i in table if i[column] == value]
+    print(tbl)
+    deleted = len(table)
+    tble = []
+    for i in tbl:
+        tble.append({k: v for k, v in i.items() if k != column})
+    return tble
