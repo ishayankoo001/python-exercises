@@ -18,4 +18,17 @@ def ex32(fname1):
     [(2,0), (0,6), (4,4), (1,0), (7,16)]
 
     '''
-    # insert here your code
+    with open(fname1) as f:
+        js = json.load(f)
+        newls = []
+        for element in js:
+            a = sum(int(a) for a in element if int(a) % 2 == 0)
+            b = sum(int(a) for a in element if int(a) % 2 != 0)
+            newls.append((b,a))
+
+
+        return newls
+
+
+print(ex32("file1.json"))
+# insert here your code
