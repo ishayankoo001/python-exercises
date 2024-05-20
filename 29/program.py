@@ -72,8 +72,6 @@ def es29(table1,table2,col):
     table1[:] = (sorted(table1, key=lambda x:x[col]))
     return sum
 
-es29(t1,t2,'C1')
-print(t1)
 
 
 
