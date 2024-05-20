@@ -30,15 +30,34 @@ def es33(fname1,fname2):
     p
 
     '''
+    alphas = []
     # insert here your code
+    with open(fname1) as f:
+        whole = f.read()
+        whole.strip()
+        ls = [i for i in whole if i.isalpha() and i.islower()]
+        dict = {}
+        for i in ls:
+            if i in dict:
+                dict[i] += 1
+            else:
+                dict[i] = 1
+        dict = sorted(dict.items(), key = lambda x:[-x[1],x[0]])
+    with open(fname2,"w") as f2:
+        h = 0
+
+        for i,v in dict:
+            f2.write(i*v)
+            h+=1
+            if h!= len(dict):
+                f2.write("\n")
+
+    return len(dict)
 
 
 
 
-
-
-
-
+es33("ftesto3.txt", "test.txt")
 
 
 
