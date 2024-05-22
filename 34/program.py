@@ -26,4 +26,30 @@ def ex34(fname1, fname2):
     Note: assume that it is always n>2
 
     '''
+    f = open(fname1)
+    chars = []
+    f = json.load(f)
+    print(f)
+    for i in f:
+        for j in i:
+            if j not in chars:
+                chars.append(j)
+    newls = []
+    for i, val in enumerate(f):
+
+        for j, val2 in enumerate(chars):
+            if val2 not in val:
+                f[i].append(val2)
+    f = [list(x) for x in zip(*f)]
+    for i, val in enumerate(f):
+
+        for j, val2 in enumerate(chars):
+            if val2 not in val:
+                f[i].append(val2)
+    f = [list(x) for x in zip(*f)]
+    f2 = open(fname2, "w")
+    json.dump(f,f2)
+
+    return set(chars)
     # insert here your code
+ex34(fname1="file3.json",fname2="test.json")
