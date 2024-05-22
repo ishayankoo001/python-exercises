@@ -1,7 +1,16 @@
 
 import os
 
-
+def find_in_file(file, word):
+    words = []
+    with open(file) as f:
+        for line in f:
+            words.extend(line.strip().split(" "))
+    occurence = 0
+    for w in words:
+        if w == word:
+            occurence += 1
+    return occurence
 def es35(dir1, words):
     """Design the function  es35(dir1, word_set), that takes as inputs:
         dir1:   the path of a directory
@@ -24,4 +33,20 @@ def es35(dir1, words):
     marks.
 
     """
-    # insert here your code
+    path = dir1
+    dict = {k:(0,0) for k in words}
+    for subdir in os.listdir(path):
+        if os.path.isfile(os.path.join(path,subdir)):
+            if(subdir[-4:]==".txt"):
+
+                p = os.path.join(path, subdir)
+                for w in words:
+                    occurences = find_in_file(p,w)
+                    if occurences>=1:
+                        dict[w] = (dict[w][0]+occurences,dict[w][1]+1)
+
+                print(subdir)
+    print(dict)
+    dict = {k:v for k,v in dict.items() if v != (0,0)}
+    return(dict)
+es35("A",["a"])
