@@ -6,7 +6,6 @@ def es38(labyrinth):
     cell positions are determined by pairs (x,y) where y is the row
     and x is the column in which the cell is located.
     The cell at the top left has coordinates (0,0).
-   
     The grid cells contain the integer 0 (free) or the integer 1
     (obstacle).
     You can move between two adjacent cells only if the destination

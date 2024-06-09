@@ -1,6 +1,4 @@
-
-
-def es36(dictionariesList):
+def es36(dictionariesList: list[dict]):
     '''Implement the function es36(dictionariesList) that takes as an
     input a list of dictionaries and returns a dictionary.
 
@@ -24,4 +22,29 @@ def es36(dictionariesList):
     {'a':[3,5],'d':[]}
 
     '''
-    # insert here your code
+    keys = []
+    d = {}
+    for dict in dictionariesList:
+        keys.extend(dict.keys())
+    keys = list(set([x for x in keys if find_occurences(keys,x)==len(dict)]))
+    d = {k:[] for k in keys}
+    for dict in dictionariesList:
+        for k in keys:
+            d[k].extend(dict[k])
+    for a,v in d.items():
+       d[a] = list(set([x for x in d[a] if find_occurences(d[a],x)==len(dict)]))
+
+
+    return(d)
+
+
+def find_occurences(l, w):
+    s = 0
+    for i in l:
+        if i == w:
+            s += 1
+    return s
+l = [    {'a': [1,3,5],'b':[2,3 ],'d':[3]},
+    {'a':[5,1,2,3], 'b':[2],'d':[3]},
+    {'a':[3,5], 'c':[4,1,2],'d':[4]}]
+es36(l)

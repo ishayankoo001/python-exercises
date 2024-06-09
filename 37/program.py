@@ -1,6 +1,6 @@
 
 
-def es37(dictionariesList):
+def es37(dictionariesList: [dict]):
     '''Write the function es37(dictionariesList) that takes as an input a
     list of dictionaries and returns a dictionary.
 
@@ -22,8 +22,31 @@ def es37(dictionariesList):
     {'a':{1,2,3,5},'b':{2,3},'d':{3,4}}
 
     '''
-    # insert here your code
+    keys = {}
+    for dic in dictionariesList:
+        k = list(dic.keys())
+        for i in k:
+            if i in keys:
+                keys[i] += 1
+            else:
+                keys[i] = 1
+    least = (len(dictionariesList)+1) // 2
+    new_keys = {}
+    for a,b in keys.items():
+        if b>=least:
+            new_keys[a] = []
+    for i in dictionariesList:
+        for j in list(i.keys()):
+            if j in list(new_keys.keys()):
+                new_keys[j].extend(i[j])
+    new_keys = {a:(set(b)) for a,b in new_keys.items()}
 
+
+    return(new_keys)
+    print(keys)
+es37([{'a': [1,3,5],'b':[2,3 ],'d':[3]},
+    {'a':[5,1,2,3], 'b':[2],'d':[3]},
+    {'a':[3,5], 'c':[4,1,2],'d':[4]}])
 
 
 
