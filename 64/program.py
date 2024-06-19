@@ -13,6 +13,31 @@ def es64(l):
       6 9
     5 9 0
     '''
-    # enter your code here
+    max_len = len(str(max(l)))
+    mystr = ""
+    l = [str(i) for i in l]
+    for i in (range(max_len,0,-1)):
+        for j,val in enumerate(l):
+            if len(str(val)) == i:
+                if(j==len(l)-1):
+                    mystr += str(val)[0]
+                else:
+                    mystr += str(val)[0] + " "
+                try:
+                 l[j] = (str(val)[1:])
+                except ValueError:
+                    pass
+            else:
+                if(j==len(l)-1):
+                    mystr += " "
+                else:
+                    mystr+="  "
+        mystr+= "\n"
+    return mystr[:-1:]
 
+
+
+
+print(es64([1, 23, 2000]))
+print("    2\n    0\n  2 0\n1 3 0")
 
