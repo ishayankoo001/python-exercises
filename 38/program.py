@@ -27,7 +27,9 @@ def es38(labyrinth):
     For example: for the 7x7 size labyrinth:
     0001000
     1000010
-    0001010
+    0001010.
+
+
     1010010
     0011010
     1001011
@@ -39,3 +41,29 @@ def es38(labyrinth):
 
     '''
     # insert here your code
+    reachables = [[0 for i in range(len(labyrinth[0]))] for j in range(len(labyrinth))]
+    reachables[0][0] = 1
+    for i in range(len(reachables[0])):
+        for j in range(len(reachables)):
+            if reachables[j][i] == 1:
+                try:
+                    if(labyrinth[j+1][i])==0:
+                        reachables[j+1][i] = 1
+                    if(labyrinth[j][i+1])==0:
+                        reachables[j][i+1] = 1
+                except IndexError:
+                    continue
+    print(labyrinth)
+    print(reachables)
+    maxi, maxj = (1,1)
+    for i in range(len(reachables[0])):
+        for j in range(len(reachables)):
+            if reachables[j][i] == 1:
+                if j > maxj:
+                    maxj = j
+                    maxi = i
+                elif j == maxj:
+                    if i>maxi:
+                        maxi = i
+    return (maxi,maxj)
+
