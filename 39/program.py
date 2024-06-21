@@ -1,5 +1,5 @@
-
 import json
+
 
 def ex39(n, jsonFile):
     '''Given an integer n, a spiral matrix of order n is a matrix of
@@ -23,17 +23,38 @@ def ex39(n, jsonFile):
      and the value returned will be 74.
 
     '''
-    # insert your code here
+    mat = [[0 for i in range(n)] for i in range(n)]
+    left = 0
+    right = n - 1
+    top = 0
+    bottom = n - 1
+    count = 1
+    while(left<=right and top<=bottom):
+        for i in range(left, right + 1):
+            mat[top][i] = count
+            count += 1
+        top += 1
+        for i in range(top, bottom+1):
+            mat[i][right] = count
+            count += 1
+        right -= 1
+        for i in range(right, left-1, -1):
+            mat[bottom][i] = count
+            count += 1
+        bottom -= 1
+        for i in range(bottom, top -1,-1):
+            mat[i][left] = count
+            count+=1
+        left+=1
+    sums = 0
+    temp = list(zip(*mat))
+    for i in range(0,len(mat),2):
+        sums += sum(temp[i])
+
+    with open(jsonFile,"w") as f:
+        json.dump(mat,f)
 
 
+    return sums
+print(ex39(4,"a.json"))
 
-
-
-
-
-
-
-
-
-
-    
