@@ -11,4 +11,11 @@ def es77(word):
     Example: es77("fondamenti") should return
     ['i', 'ti', 'ti', 'nti', 'enti', 'enti', 'menti', 'amenti', 'damenti', 'ndamenti', 'ondamenti', 'fondamenti']
     '''
-    #Enter your code here
+    s = ""
+    ls = []
+    for i in range(len(word)-1,-1,-1):
+        s= word[i]+s
+        ls.append(s)
+    return ls
+print(es77(("fondamenti")))
+
