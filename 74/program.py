@@ -1,6 +1,13 @@
 import images
 
 
+def calc_dist(i, j, center, times, thickness):
+    x = abs(i - center[0])
+    y = abs(j - center[1])
+    length = ((x ** 2 + y ** 2) ** 0.5)
+    if (length < thickness * (times + 1)):
+        return True
+    return False
 def es74(filePng, center, thickness, colors, pngFileOut):
     """Design and implement the function
     es74(filePng, center, thickness, colors, pngFileOut) that, given a
@@ -25,5 +32,21 @@ The parameters are the following:
       return: list with the number of pixels colored of each color
 
     """
-### insert your code here
-    pass
+
+
+    img = images.load(filePng)
+    s = [0 for i in range(len(colors))]
+    print(len(s))
+    print(len(colors))
+    for j in range(len(img)):
+        for i in range(len(img[0])):
+            for k in range(len(colors)-1,-1,-1):
+                if calc_dist(i,j,center,k, thickness):
+                    img[j][i] = colors[k]
+                    s[k] += 1
+    images.save(img,pngFileOut)
+    for i in range(len(s)-1,-1,-1):
+         if i!=0:
+             s[i] -= s[i-1]
+
+    return s
