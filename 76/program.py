@@ -13,4 +13,10 @@ def es76(word):
     ['fondamenti', 'ondamenti', 'ndamenti', 'damenti', 'amenti', 'menti', 'enti', 'nti', 'ti', 'i']
 
     '''
-    # insert here your code
+    if len(word) == 1:
+        return word
+    list = []
+    list.append(word)
+    list.extend(es76(word[1:]))
+    return list
+
